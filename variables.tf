@@ -17,7 +17,7 @@ variable "availability_zones" {
 variable "bandwidth" {
   type        = number
   default     = 100
-  description = "The bandwidth size. The value ranges from 1 to 1000 Mbit/s."
+  description = "The EIP bandwidth size. The value for a public loadbalancer ranges from 1 to 1000 Mbit/s. 0 disables the EIP, making the loadbalancer private."
 }
 
 variable "subnet_id" {
@@ -28,6 +28,12 @@ variable "subnet_id" {
 variable "network_ids" {
   type        = list(string)
   description = "Network IDs to use for loadbalancer backends. Default: <obtained from subnet_id>"
+}
+
+variable "ip_target_enable" {
+  type        = bool
+  description = "Enable using ip as backend feature."
+  default     = false
 }
 
 variable "layer7_flavor" {
