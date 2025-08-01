@@ -49,7 +49,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [opentelekomcloud_lb_loadbalancer_v3.elb](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/lb_loadbalancer_v3) | resource |
+| [opentelekomcloud_lb_loadbalancer_v3.loadbalancer](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/lb_loadbalancer_v3) | resource |
 | [opentelekomcloud_vpc_eip_v1.ingress_eip](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/vpc_eip_v1) | resource |
 | [opentelekomcloud_lb_flavor_v3.layer4_flavor](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/lb_flavor_v3) | data source |
 | [opentelekomcloud_lb_flavor_v3.layer7_flavor](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/lb_flavor_v3) | data source |
@@ -62,7 +62,8 @@ No modules.
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Common prefix for all OTC resource names | `string` | n/a | yes |
 | <a name="input_network_ids"></a> [network\_ids](#input\_network\_ids) | Network IDs to use for loadbalancer backends. Default: <obtained from subnet\_id> | `list(string)` | n/a | yes |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet where the elastic load balancer will be created. | `string` | n/a | yes |
-| <a name="input_bandwidth"></a> [bandwidth](#input\_bandwidth) | The bandwidth size. The value ranges from 1 to 1000 Mbit/s. | `number` | `100` | no |
+| <a name="input_bandwidth"></a> [bandwidth](#input\_bandwidth) | The EIP bandwidth size. The value for a public loadbalancer ranges from 1 to 1000 Mbit/s. 0 disables the EIP, making the loadbalancer private. | `number` | `100` | no |
+| <a name="input_ip_target_enable"></a> [ip\_target\_enable](#input\_ip\_target\_enable) | Enable using ip as backend feature. | `bool` | `false` | no |
 | <a name="input_layer4_flavor"></a> [layer4\_flavor](#input\_layer4\_flavor) | Flavor string for layer 4 routing. Default: L4\_flavor.elb.s1.small (set to "" explicitly to disable layer 4.) | `string` | `"L4_flavor.elb.s1.small"` | no |
 | <a name="input_layer7_flavor"></a> [layer7\_flavor](#input\_layer7\_flavor) | Flavor string for layer 7 routing. | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Common tag set for project resources | `map(string)` | `{}` | no |
