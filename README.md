@@ -72,7 +72,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_elb_id"></a> [elb\_id](#output\_elb\_id) | n/a |
-| <a name="output_elb_private_ip"></a> [elb\_private\_ip](#output\_elb\_private\_ip) | n/a |
-| <a name="output_elb_public_ip"></a> [elb\_public\_ip](#output\_elb\_public\_ip) | n/a |
+| <a name="output_eip"></a> [eip](#output\_eip) | The ingress EIP resource with all of its attributes. Null when the EIP is disabled. |
+| <a name="output_elb"></a> [elb](#output\_elb) | The loadbalancer resource with all of its attributes. |
+| <a name="output_elb_id"></a> [elb\_id](#output\_elb\_id) | ID of the loadbalancer. |
+| <a name="output_elb_private_ip"></a> [elb\_private\_ip](#output\_elb\_private\_ip) | Private VIP address of the loadbalancer within its subnet. |
+| <a name="output_elb_public_ip"></a> [elb\_public\_ip](#output\_elb\_public\_ip) | Public address of the loadbalancer. Null when the EIP is disabled. |
 <!-- END_TF_DOCS -->
